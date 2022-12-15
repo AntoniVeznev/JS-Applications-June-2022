@@ -1,0 +1,29 @@
+import {del, get, post, put} from "./api.js";
+
+
+export async function createOffer(offer) {
+    return post('/data/offers', offer);
+}
+
+export async function allOffers() {
+    return get('/data/offers?sortBy=_createdOn%20desc');
+}
+
+
+export async function getOfferById(id) {
+    return get('/data/offers/' + id);
+}
+
+export async function editOfferById(id) {
+    return put('/data/offers/' + id);
+}
+
+export async function deleteOffer(id) {
+    return del('/data/offers/' + id);
+}
+
+
+export async function updateOffer(id, offer) {
+    return put('/data/offers/' + id, offer);
+}
+
